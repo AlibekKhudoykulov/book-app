@@ -28,7 +28,7 @@ app.use("/posts", posts);
 app.use("/comments", comments);
 
 app.get("/", (req, res) => {
-  res.render("index", { title: "Welcome to Blog App!" });
+  res.render("index", { title: "Welcome to book App!" });
 });
 
 app.get("/rent", (req, res) => {
