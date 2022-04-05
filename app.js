@@ -36,7 +36,7 @@ app.get("/rent", (req, res) => {
     if (err) res.sendStatus(500);
 
     const posts = JSON.parse(data).filter((post) => post.isRented);
-    res.render("all_posts", {
+    res.render("all_books", {
       title: "Archived Posts",
       posts: posts,
     });
@@ -56,8 +56,8 @@ app.get("/return", (req, res) => {
     if (err) res.sendStatus(500);
 
     const posts = JSON.parse(data).filter((post) => !post.isRented);
-    res.render("all_posts", {
-      title: "Archived Posts",
+    res.render("all_books", {
+      title: "Rented Books",
       posts: posts,
     });
   });

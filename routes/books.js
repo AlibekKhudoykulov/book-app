@@ -17,14 +17,14 @@ dbc.useCollection("posts.json");
 router.get("/", (req, res) => {
     dbc.getAll(
         (records) =>
-            res.render("all_posts", {
-                title: "List of All Posts",
+            res.render("all_books", {
+                title: "List of All Books",
                 posts: records,
 
             }),
         () =>
-            res.render("all_posts", {
-                title: "List of All Posts",
+            res.render("all_books", {
+                title: "List of All Books",
                 posts: null,
 
             })
@@ -33,20 +33,20 @@ router.get("/", (req, res) => {
 
 
 
-router.get("/create-post", (req, res) => {
-    res.render("create_post", {title: "New Post Form"});
+router.get("/create-book", (req, res) => {
+    res.render("create_book", {title: "New Post Form"});
 });
 
-router.post("/create-post", (req, res) => {
+router.post("/create-book", (req, res) => {
     if (v.isValid(req.body)) {
         // const date = new Date().toDateString();
         const date = new Date().toLocaleString();
         // const date = new Date().toString();
         dbc.saveOne(req.body, date, () =>
-            res.render("create_post", {success: true})
+            res.render("create_book", {success: true})
         );
     } else {
-        res.render("create_post", {error: true});
+        res.render("create_book", {error: true});
     }
 });
 

@@ -149,10 +149,10 @@ img {
 .intro a:hover{
   color:white;
 }
-.create-post-btn:hover{
+.create-book-btn:hover{
   background-color: var(--skyblue);
 }
-.create-post button:hover{
+.create-book button:hover{
  color: white;
 }
 
@@ -182,7 +182,7 @@ img {
   font-size: 2rem;
 }
 
-.create-post {
+.create-book {
   width: 75%;
   margin: 3rem auto;
   border-radius: 10px;
@@ -221,7 +221,7 @@ form > * {
   border: 2px solid var(--red);
 }
 
-.create-post-btn {
+.create-book-btn {
   width: auto; /* without it, flexbox would give it width: 100%; */
   border: 3px solid var(--skyblue);
   border-radius: 3px;
@@ -232,7 +232,7 @@ form > * {
   cursor: pointer;
 }
 
-.create-post-btn:hover {
+.create-book-btn:hover {
   border-color: rgba(64, 155, 157, 0.9);
   color: rgba(64, 155, 157, 0.9);
 }
@@ -303,7 +303,7 @@ form > * {
 }
 
 
-.all-posts {
+.all-books {
   width: 85%;
   margin: auto;
 }
