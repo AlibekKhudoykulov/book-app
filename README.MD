@@ -29,4 +29,4 @@ The source code is available in GitHub via this link: https://github.com/AlibekK
 
 ## Live Demo
 
-The project is hosted in Glitch and can be accessed from here: https://desert-splendid-shelf.glitch.me/
+The project is hosted in Glitch and can be accessed from here: https://lackadaisical-elemental-flier.glitch.me
