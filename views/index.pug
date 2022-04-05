@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+  #spinner-back
+      #spinner-front
+        img(src="images/Animated book.gif", alt="Loader", sizes="", srcset="")
+        p Loading...
+
+  main.intro
+    h1.intro_primary World's bestseller books
+    p.intro_secondary This web application was created to fulfill Web Technology module’s requirements and does not represent an actual company or service!
+    a(href="posts/create-post" class="create-post-btn").cta Get Started
+    img(src="images/book.png", alt="main image", sizes="", srcset="").main-img
+

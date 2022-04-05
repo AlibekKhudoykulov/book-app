@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width", initial-scale="1.0")
+    title= title
+    script(src="/javascripts/spinner.js")
+    link(rel='stylesheet', href='/styles/styles.css')
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;900&display=swap" rel="stylesheet")
+    link(rel="shortcut icon", href="/images/open-book.png", type="image/x-icon")
+
+  body
+    include includes/navbar
+
+    block content
+
+    footer
+      p Copyright © 2022
+    script(src='https://cdn.jsdelivr.net/npm/marked/marked.min.js' defer)

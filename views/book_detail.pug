@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+  main.all-posts  
+    h2.post-title.text-center= post.title
+    p.post-author= `By ${post.author}`
+    p.post-date= post.date
+    p.post-body#body= post.body 
+    
+    
+    script(type="text/javascript").
+      window.onload = function () {
+        document.getElementById('body').innerHTML = marked(document.getElementById('body').innerHTML);
+      }

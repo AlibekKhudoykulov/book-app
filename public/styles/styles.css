@@ -1,0 +1,429 @@
+:root {
+  --dark-grey: #444;
+  --medium-grey: #ccc;
+  --light-grey: #eee;
+  --red: #dc143c;
+  --green: #00ff00;
+  --yellow: #1d7a41;
+  --skyblue: #409b9d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--dark-grey);
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+#spinner-back,
+#spinner-front {
+  position: fixed;
+  width: 100%;
+  transition: opacity 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#spinner-back {
+  top: 0;
+  height: 100%;
+  z-index: 10;
+  background: #fff;
+}
+
+#spinner-front {
+  z-index: 11;
+  text-align: center;
+  margin-top: 50vh;
+  transform: translateY(-50%); /* css trick to center vertically */
+}
+
+#spinner-back.show,
+#spinner-front.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.text-center {
+  text-align: center;
+  margin: 2rem auto 1rem auto;
+}
+
+.navbar {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #444444;
+  border-bottom: 1px solid var(--medium-grey);
+
+}
+
+.logo {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem 1rem;
+  transition: all 0.1s ease-in;
+}
+
+.navbar > a:hover .logo {
+  transform: scale(1.1);
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav_items {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: hidden;
+  justify-content: flex-end;
+  align-items: center;
+}
+.site {
+  color: white;
+  width: 100px;
+  font-size: 1.5rem;
+  font-family: "Rockwell", cursive;
+}
+
+.nav_item {
+  margin: 0.5rem 1rem;
+}
+.nav_item a:hover {
+  background-color: var(--skyblue);
+  color: white;
+}
+.nav_item a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.intro {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  width: 70%;
+  margin: 5rem;
+}
+
+.intro_primary {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.intro_secondary {
+  font-size: 2rem;
+}
+
+.cta {
+  margin-top: 2rem;
+}
+.cta:hover {
+  background-color: var(--skyblue);
+}
+.intro a:hover{
+  color:white;
+}
+.create-post-btn:hover{
+  background-color: var(--skyblue);
+}
+.create-post button:hover{
+ color: white;
+}
+
+.main-img {
+  position: absolute;
+  top: 6%;
+  right: 10%;
+  max-width: 28%;
+  z-index: -1;
+}
+
+.msg {
+  height: 90%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  margin: calc(50vh - 4rem - 1.1rem - 5rem) auto;
+}
+
+.msg > * {
+  margin: 1rem;
+}
+
+.empty {
+  font-size: 2rem;
+}
+
+.create-post {
+  width: 75%;
+  margin: 3rem auto;
+  border-radius: 10px;
+  box-shadow: 0 0 16px 8px var(--light-grey);
+}
+
+.form-title {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+form > * {
+  margin: 1rem auto;
+  width: 85%;
+}
+
+.success,
+.error {
+  border-radius: 3px;
+  width: 50%;
+  margin: auto;
+}
+
+.success {
+  border: 2px solid var(--green);
+}
+
+.error {
+  border: 2px solid var(--red);
+}
+
+.create-post-btn {
+  width: auto; /* without it, flexbox would give it width: 100%; */
+  border: 3px solid var(--skyblue);
+  border-radius: 3px;
+  color: var(--skyblue);
+  padding: 1rem 3rem;
+  background-color: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.create-post-btn:hover {
+  border-color: rgba(64, 155, 157, 0.9);
+  color: rgba(64, 155, 157, 0.9);
+}
+
+.post-input {
+  padding: 1rem;
+}
+
+.posts {
+  width: 85%;
+  margin: auto;
+  min-height: calc(100vh - 49px - 40px - 2rem);
+}
+
+.post-item {
+  border: 1px solid var(--medium-grey);
+  border-radius: 3px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .post-links {
+  width: 100%;
+} */
+
+.post-links > * {
+  margin-right: 1rem;
+}
+
+.post-icon {
+  display: inline-block;
+  width: 24px;
+}
+
+.post-icon img {
+  width: 100%;
+}
+
+.delete-post,
+.rent-post,
+.return-post {
+  transition: all 0.3s ease-in;
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+
+
+.delete-post:hover,
+.rent-post:hover,
+.return-post:hover{
+  color: var(--light-grey);
+}
+
+.delete-post:hover {
+  background-color: var(--red);
+}
+
+.rent-post:hover {
+  background-color: var(--yellow);
+}
+.return-post:hover{
+  background-color: #186f9d;
+}
+
+
+.all-posts {
+  width: 85%;
+  margin: auto;
+}
+
+.post-title {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.post-author,
+.post-date {
+  text-align: left;
+}
+
+.post-body {
+  margin: 3rem auto;
+  padding: 3rem;
+  white-space: pre-wrap; /* pre, pre-line, pre-wrap */
+  box-shadow: 0 0 16px 8px var(--medium-grey);
+  border-radius: 10px;
+  min-height: 50vh;
+}
+
+footer {
+  border-top: 10px solid var(--medium-grey);
+  background-color: var(--light-grey);
+  padding-left: 5rem;
+  display: flex;
+  margin-top: 168px;
+  flex-flow: row wrap;
+  min-height: 4.5rem;
+  align-content: center;
+}
+
+.github {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.github > img {
+  width: 1.5rem;
+  height: 1.5rem;
+  /* vertical-align: bottom; */ /* ways to remove anchor tag baseline */
+  /* display: block; */
+}
+
+
+@media screen and (max-width: 1280px) {
+  .main-img {
+    right: 5%;
+    max-width: 45%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .intro {
+    margin: 3rem;
+  }
+
+  .intro_primary {
+    font-size: 2.5rem;
+  }
+
+  .intro_secondary {
+    font-size: 1.5rem;
+  }
+
+  .cta {
+    font-size: 1rem;
+  }
+
+  .main-img {
+    right: 3%;
+  }
+
+  footer {
+    padding-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .intro {
+    margin: 2rem 2rem;
+  }
+
+  .intro_primary {
+    font-size: 2rem;
+  }
+
+  .intro_secondary {
+    font-size: 1rem;
+  }
+
+  .main-img {
+    top: 10%;
+    right: 3%;
+  }
+
+  .cta {
+    padding: 0.5rem 1rem;
+  }
+
+  footer {
+    padding-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .intro_primary {
+    font-size: 2rem;
+  }
+
+  .intro_secondary {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .intro_primary {
+    font-size: 1.5rem;
+  }
+}

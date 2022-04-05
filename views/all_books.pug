@@ -1,0 +1,24 @@
+extends layout.pug
+
+block content
+    main.all-posts
+    div.buttons
+        if posts.length
+            ul.posts
+                each post in posts
+                    li.post-item
+                        div.post-links
+                            a(href=`posts/${post.id}` class="post-icon")
+                                img(src="/images/875px-Book.svg.png", alt="User", sizes="", srcset="")
+                            a(href=`posts/${post.id}`)= post.title
+                        div.buttons
+                            if !post.isRented
+                                a.rent-post(href=`posts/${post.id}/rent`) Rent
+                            else
+                                a.return-post(href=`posts/${post.id}/return`) Return
+
+                            a.delete-post(href=`posts/${post.id}/delete`) Delete
+
+        else
+            div.msg
+                p.empty No any Books yet

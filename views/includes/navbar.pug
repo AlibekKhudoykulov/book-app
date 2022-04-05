@@ -1,0 +1,16 @@
+mixin link(href, name)
+  a(href=href)&attributes(attributes)= name
+
+header.navbar
+  a(href="/" title="Homepage")
+    img(src="/images/open-book.png", alt="Brand Logo", srcset="").logo
+  span.site  OPAC
+
+  nav.nav
+    ul.nav_items
+      li.nav_item 
+          +link('/posts/create-post', 'New Book')(class="nav-link")
+      li.nav_item 
+        +link('/posts', 'All Books')(class="nav-link")
+      li.nav_item 
+        +link('/rent', 'Rented Books')(class="nav-link")
